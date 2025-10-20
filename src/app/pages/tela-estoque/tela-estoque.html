@@ -1,0 +1,43 @@
+<div class="estoque-container">
+  <header>
+    <h1>Estoque</h1>
+    <p>Visão Geral do Controle de Estoque</p>
+  </header>
+
+  <section style="display:flex; gap:12px; justify-content:flex-end; margin-bottom:12px;">
+    <div>
+      <label>Filtrar por categoria</label>
+      <select (change)="onFilterChange($any($event.target).value)">
+        <option value="">Todas</option>
+        <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || c.id }}</option>
+      </select>
+    </div>
+  </section>
+
+  <section>
+    <!-- Sempre exibe em ordem alfabética: tabela simples -->
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Estoque Mínimo</th>
+          <th>Categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let material of displayedMaterials">
+          <td>{{ material.nome }}</td>
+          <td>{{ material.descricao }}</td>
+          <td>{{ material.quantidade }}</td>
+          <td>{{ material.estoqueMinimo }}</td>
+          <td>{{ getCategoryName(material) }}</td>
+        </tr>
+        <tr *ngIf="displayedMaterials.length === 0">
+          <td colspan="5" style="text-align:center;">Nenhum material encontrado.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -1,0 +1,165 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Menu Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #1E3A8A;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar .menu ul li {
+    margin: 10px 0;
+}
+
+.sidebar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .menu ul li a:hover {
+    background-color: #2563EB;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-content header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.main-content header h1 {
+    font-size: 24px;
+    color: #1E3A8A;
+}
+
+.main-content header p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #1E3A8A;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FBBF24;
+    font-size: 14px;
+    text-align: center;
+    color: #1E3A8A;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #1E3A8A;
+}
+
+.select-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #2563EB;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #2563EB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center; /* Garante que o texto do botão esteja centralizado */
+}
+
+.submit-button:hover {
+    background-color: #1D4ED8;
+}
+
+/* Botões */
+button {
+    background-color: #2563EB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1D4ED8;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    align-items: center;    /* Centraliza o botão verticalmente (se necessário) */
+}

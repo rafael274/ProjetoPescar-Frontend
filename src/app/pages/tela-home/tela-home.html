@@ -1,0 +1,30 @@
+<main class="main-content">
+            <header>
+                <h1>Página Inicial</h1>
+                <p>Visão Geral do Controle de Estoque</p>
+            </header>
+            <section class="cards">
+                <div class="card blue">
+                    <h3>{{ totalProducts }} Produtos Cadastrados</h3>
+                    <p>{{ totalItemsInStock }} Itens no Estoque</p>
+                </div>
+                <div class="card red">
+                    <h3>{{ zeroStockCount }} Produtos Com Estoque Zerado</h3>
+                    <p>Zerado</p>
+                </div>
+                <div class="card yellow">
+                    <h3>{{ minStockCount }} Produtos Com Estoque Mínimo</h3>
+                    <p>Mínimo</p>
+                </div>
+            </section>
+            <section class="charts">
+                <div class="chart">
+                    <h3>Entradas e Saídas Últimos 10 Dias</h3>
+                    <canvas #chartEntradasSaidas id="chartEntradasSaidas"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Atividades no Sistema Últimos 10 Dias</h3>
+                    <canvas #chartAtividades id="chartAtividades"></canvas>
+                </div>
+            </section>
+        </main>

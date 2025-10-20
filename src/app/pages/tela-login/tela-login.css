@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1E3A8A; /* Azul de fundo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #F3F4F6; /* Branco do formulário */
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 120px; /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+.login-container img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px 12px; /* Ajuste do padding para centralizar melhor */
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #FBBF24 !important;
+    color: #000;
+    font-size: 14px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho do campo */
+}
+
+.login-container input:-webkit-autofill,
+.login-container input:-webkit-autofill:focus,
+.login-container input:-webkit-autofill:hover,
+.login-container input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 100px #FBBF24 inset !important;
+    box-shadow: 0 0 0 100px #FBBF24 inset !important;
+    background-color: #FBBF24 !important;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    border: none;
+}
+
+.login-container input::placeholder {
+    color: #000;
+    text-align: center; /* Centraliza o placeholder horizontalmente */
+}
+
+.login-container a {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #1E3A8A; /* Azul do link */
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2563EB; /* Azul do botão */
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #1D4ED8; /* Azul mais escuro ao passar o mouse */
+}

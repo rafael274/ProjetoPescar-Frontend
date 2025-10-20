@@ -1,0 +1,77 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Menu Lateral */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;         /* Sidebar ocupa toda a altura da tela */ 
+    background-color: #214287; /* cor solicitada */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 100;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar .menu ul li {
+    margin: 10px 0;
+}
+
+.sidebar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .menu ul li a:hover,
+.sidebar .menu ul li a.active {
+    background-color: #2b62b0; /* tom de destaque compatível com #214287 */
+}
+
+/* Adicione para ajustar o conteúdo principal */
+.content {
+    margin-left: 250px;
+    flex: 1;
+    width: calc(100vw - 250px);
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    overflow-y: auto;
+}
+
+.content.no-sidebar {
+    margin-left: 0;
+    width: 100vw;
+}

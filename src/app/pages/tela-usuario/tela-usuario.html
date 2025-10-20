@@ -1,0 +1,30 @@
+<div class="user-page">
+  <header>
+    <h1>Cadastro Usuário</h1>
+  </header>
+
+  <section class="user-form-container">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <input [(ngModel)]="nome" name="nome" type="text" id="nome" placeholder="Nome" required>
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="email" name="email" type="email" id="email" placeholder="E-mail" required>
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="senha" name="senha" type="password" id="senha" placeholder="Senha" required>
+      </div>
+
+      <div class="form-group">
+        <input [(ngModel)]="confirmarSenha" name="confirmarSenha" type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="add-user-button" [disabled]="userForm.invalid">Adicionar usuário</button>
+        <button type="button" class="exit-button" (click)="onCancel()">Cancelar</button>
+      </div>
+
+      <div id="message" class="message" *ngIf="message">{{ message }}</div>
+    </form>
+  </section>
+</div>

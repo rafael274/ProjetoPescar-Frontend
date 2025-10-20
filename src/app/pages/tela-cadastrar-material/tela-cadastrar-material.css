@@ -1,0 +1,190 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Menu Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #1E3A8A;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar .menu ul li {
+    margin: 10px 0;
+}
+
+.sidebar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .menu ul li a:hover {
+    background-color: #2563EB;
+}
+
+.sidebar .menu ul li a.active {
+    background-color: #2563EB;
+    font-weight: bold;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative; /* necessário para posicionar o botão no canto superior direito */
+}
+
+.main-content header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.main-content header h1 {
+    font-size: 24px;
+    color: #1E3A8A;
+}
+
+.main-content header p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* botão de gerenciar materiais no canto superior direito */
+.manage-button {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid #e11d48; /* vermelho suave */
+    color: #e11d48;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.manage-button:hover {
+    background: #e11d48;
+    color: #fff;
+}
+
+/* Formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #1E3A8A;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FBBF24;
+    font-size: 14px;
+    text-align: center;
+    color: #1E3A8A;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #1E3A8A;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-actions {
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+    margin-top: 20px;
+}
+
+.submit-button {
+    background-color: #2563EB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block; /* Garante que o botão seja tratado como um elemento inline */
+}
+
+.submit-button:hover {
+    background-color: #1D4ED8;
+}
+
+/* Mensagem de feedback */
+#mensagem {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+}
+
+/* Remove o estilo padrão do preenchimento automático do navegador */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #FBBF24 inset; /* Mantém o fundo amarelo */
+    box-shadow: 0 0 0px 1000px #FBBF24 inset; /* Para navegadores que não usam WebKit */
+    color: #1E3A8A; /* Mantém a cor do texto */
+}
+
+input:-webkit-autofill::first-line {
+    font-family: Arial, sans-serif; /* Garante que a fonte seja consistente */
+    font-size: 14px;
+    color: #1E3A8A;
+}

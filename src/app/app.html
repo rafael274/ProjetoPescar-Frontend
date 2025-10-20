@@ -1,0 +1,21 @@
+<div class="container">
+    <aside class="sidebar" *ngIf="showSidebar()">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo Projeto Pescar">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a routerLink="/home">Página inicial</a></li>
+                <li><a routerLink="/estoque">Estoque</a></li>
+                <li><a routerLink="/cadastrar-material">Cadastrar novo material</a></li>
+                <li><a routerLink="/movimentacao">Movimentação</a></li>
+                <li><a routerLink="/relatorio">Relatório</a></li>
+                <li><a routerLink="/usuario">Usuário</a></li>
+                <li><a href="#" (click)="doLogout(); $event.preventDefault()">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="content" [class.no-sidebar]="!showSidebar()">
+        <router-outlet></router-outlet>
+    </div>
+</div>

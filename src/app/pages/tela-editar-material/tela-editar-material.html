@@ -1,0 +1,58 @@
+<!-- Conteúdo Principal -->
+<main class="main-content">
+  <header>
+    <h1>Editar Material</h1>
+    <p>Selecione um material para editar ou excluir.</p>
+  </header>
+
+  <section class="form-container">
+    <form>
+      <div class="form-group">
+        <label for="selMaterial">Material</label>
+        <select id="selMaterial" name="selMaterial" [(ngModel)]="selectedId" (ngModelChange)="onSelectMaterial($event)">
+          <option value="">Selecione um material</option>
+          <option *ngFor="let m of materiais" [value]="m.id">
+            {{ m.nome || ('Material ' + (m.id || '')) }}
+          </option>
+        </select>
+      </div>
+
+      <div *ngIf="selectedId">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" [(ngModel)]="nome" />
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" [(ngModel)]="descricao"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="quantidade">Quantidade</label>
+          <input id="quantidade" name="quantidade" type="number" [(ngModel)]="quantidade" />
+        </div>
+
+        <div class="form-group">
+          <label for="estoque_minimo">Estoque Mínimo</label>
+          <input id="estoque_minimo" name="estoque_minimo" type="number" [(ngModel)]="estoqueMinimo" />
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" [(ngModel)]="categoriaId">
+            <option value="">Sem categoria</option>
+            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || ('Categoria ' + c.id) }}</option>
+          </select>
+        </div>
+
+        <div class="form-actions" style="gap:12px;">
+          <button class="submit-button" type="button" (click)="salvar()">Salvar</button>
+          <button class="manage-button" type="button" (click)="excluir()">Excluir</button>
+        </div>
+      </div>
+    </form>
+
+    <p id="mensagem">{{mensagem}}</p>
+  </section>
+</main>

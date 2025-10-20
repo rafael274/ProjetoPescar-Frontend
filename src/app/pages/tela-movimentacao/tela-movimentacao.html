@@ -1,0 +1,43 @@
+<!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header>
+                <h1>Movimentação</h1>
+                <p>Entrada e Saída</p>
+            </header>
+            <section class="form-container">
+                <!-- agora chama registrar no submit -->
+                <form id="movimentacaoForm" (submit)="registrar($event)">
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Movimentação</label>
+                        <!-- valores numéricos: 1 = entrada, 2 = saída -->
+                        <select id="tipo" required>
+                            <option value="1">Entrada</option>
+                            <option value="2">Saída</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Material</label>
+                        <select id="material" required>
+                            <option value="">Selecione um material</option>
+                            <!-- popula com os materiais carregados no componente -->
+                            <option *ngFor="let m of materiais"
+                                    [value]="m.materialId || m.id || m.idMaterial">
+                                {{ m.nome || m.descricao || m.nomeMaterial || (m.titulo || 'Material') }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Digite a quantidade" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Registrar</button>
+                    </div>
+                </form>
+                <p id="mensagem">{{mensagem}}</p>
+            </section>
+        </main>

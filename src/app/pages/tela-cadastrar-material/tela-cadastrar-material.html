@@ -1,0 +1,50 @@
+<!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header>
+                <h1>Cadastrar Novo Material</h1>
+                <p>Adicione novos materiais ao estoque.</p>
+            </header>
+
+            <!-- botão de gerenciar (edição/exclusão) no canto superior direito -->
+            <button class="manage-button" type="button" (click)="irParaEstoque()">Gerenciar</button>
+
+            <section class="form-container">
+                <!-- adicionado (submit) para chamar o método do componente -->
+                <form id="produtoForm" (submit)="cadastrar($event)">
+                    <div class="form-group">
+                        <label for="nome">Nome do Material</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do material" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a descrição do material"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade Inicial</label>
+                        <input type="number" id="quantidade" name="quantidade" placeholder="Digite a quantidade inicial" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estoque_minimo">Estoque Mínimo</label>
+                        <input type="number" id="estoque_minimo" name="estoque_minimo" placeholder="Digite o estoque mínimo" required>
+                    </div>
+
+                    <!-- novo: select de categorias -->
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria" name="categoriaId" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || c.nomeCategoria }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Cadastrar</button>
+                    </div>
+                </form>
+                <!-- agora usa binding para exibir mensagem definida no componente -->
+                <p id="mensagem">{{mensagem}}</p>
+            </section>
+        </main>
