@@ -37,7 +37,7 @@ body {
     width: 100%;
     padding: 8px 10px; /* menor altura para visual mais profissional */
     margin: 10px 0;
-    border: 1px solid rgba(7,20,51,0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 4px; /* bordas quadradas/sutis */
     background-color: #FBBF24; /* fundo amarelo solicitado */
     color: #071433; /* texto escuro para contraste */
@@ -59,7 +59,7 @@ body {
 }
 
 .login-container input::placeholder {
-    color: #8892a6;
+    color: #000000;
     text-align: left;
 }
 

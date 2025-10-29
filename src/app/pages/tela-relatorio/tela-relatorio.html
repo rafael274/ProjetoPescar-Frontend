@@ -1,0 +1,79 @@
+<div class="relatorio-container">
+  <header>
+    <h1>Relatórios do Estoque</h1>
+    <p>Gere relatórios mensais ou anuais e visualize as movimentações (entradas e saídas).</p>
+  </header>
+
+  <section class="controls">
+    <div class="control-row">
+      <label>Tipo de relatório</label>
+      <div class="radio-group">
+        <label><input type="radio" name="reportType" value="monthly" [(ngModel)]="reportType" (ngModelChange)="gerarRelatorio()"> Mensal</label>
+        <label><input type="radio" name="reportType" value="annual" [(ngModel)]="reportType" (ngModelChange)="gerarRelatorio()"> Anual</label>
+      </div>
+    </div>
+
+    <div class="control-row">
+      <label>Mês</label>
+  <select name="month" [(ngModel)]="month" (ngModelChange)="gerarRelatorio()" [disabled]="reportType === 'annual'">
+        <option [ngValue]="null">-- Selecionar --</option>
+        <option [ngValue]="1">Janeiro</option>
+        <option [ngValue]="2">Fevereiro</option>
+        <option [ngValue]="3">Março</option>
+        <option [ngValue]="4">Abril</option>
+        <option [ngValue]="5">Maio</option>
+        <option [ngValue]="6">Junho</option>
+        <option [ngValue]="7">Julho</option>
+        <option [ngValue]="8">Agosto</option>
+        <option [ngValue]="9">Setembro</option>
+        <option [ngValue]="10">Outubro</option>
+        <option [ngValue]="11">Novembro</option>
+        <option [ngValue]="12">Dezembro</option>
+      </select>
+    </div>
+
+    <div class="control-row">
+      <label>Ano</label>
+      <select name="year" [(ngModel)]="year" (ngModelChange)="gerarRelatorio()">
+        <option [ngValue]="null">-- Selecionar --</option>
+        <option *ngFor="let y of availableYears" [ngValue]="y">{{ y }}</option>
+      </select>
+    </div>
+
+    <div class="control-row actions">
+      <button type="button" class="btn-primary" (click)="gerarRelatorio()">Gerar relatório</button>
+      <button type="button" class="btn-secondary" (click)="exportarCSV()" [disabled]="!filteredMovimentacoes.length">Exportar CSV</button>
+    </div>
+  </section>
+
+  <section class="summary">
+    <h3>Resumo</h3>
+    <p>Total de movimentações: {{ filteredMovimentacoes.length }}</p>
+    <p>Entradas: {{ totais.entradas }} &nbsp; | &nbsp; Saídas: {{ totais.saidas }}</p>
+  </section>
+
+  <section class="table-section">
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Material</th>
+          <th>Tipo</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mov of filteredMovimentacoes">
+          <td>{{ (mov.data ?? mov.dataHora) ? (parseMovDate(mov)?.toLocaleDateString()) : '-' }}</td>
+          <td>{{ mov.materialNome ?? mov.material ?? '-' }}</td>
+          <td>{{ getTipoLabel(mov) }}</td>
+          <td>{{ mov.quantidade ?? mov.qtd ?? '-' }}</td>
+        </tr>
+
+        <tr *ngIf="!filteredMovimentacoes || filteredMovimentacoes.length === 0">
+          <td colspan="4" class="empty">Nenhuma movimentação encontrada para o período selecionado.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

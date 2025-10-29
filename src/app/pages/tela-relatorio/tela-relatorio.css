@@ -1,0 +1,81 @@
+.relatorio-container {
+	max-width: 1000px;
+	margin: 32px auto;
+	background: #fff;
+	padding: 24px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.controls {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+	align-items: end;
+}
+
+.control-row {
+	display: flex;
+	flex-direction: column;
+	min-width: 150px;
+}
+
+.radio-group {
+	display: flex;
+	gap: 12px;
+}
+
+.actions {
+	align-items: center;
+	display: flex;
+	gap: 8px;
+}
+
+.btn-primary {
+	background: #214287;
+	color: #fff;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.btn-secondary {
+	background: #eee;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 12px;
+}
+
+th, td {
+	padding: 10px 8px;
+	border-bottom: 1px solid #eee;
+	text-align: left;
+}
+
+thead {
+	background: #FBBF24;
+}
+
+.empty {
+	text-align: center;
+	color: #666;
+	padding: 18px 0;
+}
+
+.summary {
+	margin-top: 8px;
+}
+
+.notes {
+	margin-top: 12px;
+	color: #666;
+}
