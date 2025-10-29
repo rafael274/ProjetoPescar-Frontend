@@ -62,7 +62,8 @@
 /* Gráficos */
 .charts {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
 }
 
 .chart {
@@ -72,9 +73,14 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    min-height: 380px; /* aumentado de 260px para dar mais espaço */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
+    max-width: 900px;
+}
+
+.chart-single {
+    width: 100%;
 }
 
 .chart h3 {

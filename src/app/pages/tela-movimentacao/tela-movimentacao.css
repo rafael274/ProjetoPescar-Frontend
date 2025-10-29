@@ -131,11 +131,11 @@ body {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
-    text-align: center; /* Garante que o texto do botão esteja centralizado */
+    display: inline-block; /* match cadastrar style */
 }
 
 .submit-button:hover {

@@ -15,6 +15,14 @@
                         <label for="nome">Nome do Material</label>
                         <input type="text" id="nome" name="nome" placeholder="Digite o nome do material" required>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria" name="categoriaId" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || c.nomeCategoria }}</option>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
@@ -29,16 +37,7 @@
                     <div class="form-group">
                         <label for="estoque_minimo">Estoque Mínimo</label>
                         <input type="number" id="estoque_minimo" name="estoque_minimo" placeholder="Digite o estoque mínimo" required>
-                    </div>
-
-                    <!-- novo: select de categorias -->
-                    <div class="form-group">
-                        <label for="categoria">Categoria</label>
-                        <select id="categoria" name="categoriaId" required>
-                            <option value="">Selecione uma categoria</option>
-                            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || c.nomeCategoria }}</option>
-                        </select>
-                    </div>
+                    </div>                
 
                     <div class="form-actions">
                         <button type="submit" class="submit-button">Cadastrar</button>

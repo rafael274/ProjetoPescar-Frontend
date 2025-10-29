@@ -35,15 +35,15 @@ body {
 
 .login-container input {
     width: 100%;
-    padding: 10px 12px; /* Ajuste do padding para centralizar melhor */
+    padding: 8px 10px; /* menor altura para visual mais profissional */
     margin: 10px 0;
-    border: none;
-    border-radius: 25px;
-    background-color: #FBBF24 !important;
-    color: #000;
+    border: 1px solid rgba(7,20,51,0.06);
+    border-radius: 4px; /* bordas quadradas/sutis */
+    background-color: #FBBF24; /* fundo amarelo solicitado */
+    color: #071433; /* texto escuro para contraste */
     font-size: 14px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    box-sizing: border-box; /* Garante que o padding não afete o tamanho do campo */
+    text-align: left; /* alinhamento à esquerda é mais profissional */
+    box-sizing: border-box;
 }
 
 .login-container input:-webkit-autofill,
@@ -53,14 +53,14 @@ body {
     -webkit-box-shadow: 0 0 0 100px #FBBF24 inset !important;
     box-shadow: 0 0 0 100px #FBBF24 inset !important;
     background-color: #FBBF24 !important;
-    color: #000 !important;
-    -webkit-text-fill-color: #000 !important;
-    border: none;
+    color: #071433 !important;
+    -webkit-text-fill-color: #071433 !important;
+    border: 1px solid rgba(7,20,51,0.06) !important;
 }
 
 .login-container input::placeholder {
-    color: #000;
-    text-align: center; /* Centraliza o placeholder horizontalmente */
+    color: #8892a6;
+    text-align: left;
 }
 
 .login-container a {
@@ -76,17 +76,33 @@ body {
 }
 
 .login-container button {
-    width: 100%;
-    padding: 12px;
+    display: block;
+    width: 160px; /* largura menor e fixa */
+    padding: 6px 14px; /* altura reduzida, horizontal confortável */
+    margin: 8px auto 0 auto; /* centraliza o botão abaixo dos inputs */
     border: none;
-    border-radius: 25px;
+    border-radius: 20px; /* bordas bem arredondadas */
     background-color: #2563EB; /* Azul do botão */
     color: #FFF;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 13px; /* font menor para combinar com o botão reduzido */
+    font-weight: 600;
     cursor: pointer;
 }
 
 .login-container button:hover {
     background-color: #1D4ED8; /* Azul mais escuro ao passar o mouse */
 }
+
+/* Estilo para o parágrafo introdutório (acima do formulário) */
+body > p {
+    display: block;
+    background: transparent;
+    color: #fff;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* (autofill rules above keep inputs yellow; no conflicting rules here) */

@@ -125,7 +125,8 @@ body {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 300px;
     padding: 10px;
     border: none;

@@ -18,6 +18,15 @@
       </div>
 
       <div *ngIf="selectedId">
+
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" [(ngModel)]="categoriaId">
+            <option value="">Sem categoria</option>
+            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || ('Categoria ' + c.id) }}</option>
+          </select>
+        </div>
+        
         <div class="form-group">
           <label for="nome">Nome</label>
           <input id="nome" name="nome" type="text" [(ngModel)]="nome" />
@@ -37,15 +46,7 @@
           <label for="estoque_minimo">Estoque Mínimo</label>
           <input id="estoque_minimo" name="estoque_minimo" type="number" [(ngModel)]="estoqueMinimo" />
         </div>
-
-        <div class="form-group">
-          <label for="categoria">Categoria</label>
-          <select id="categoria" name="categoria" [(ngModel)]="categoriaId">
-            <option value="">Sem categoria</option>
-            <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome || c.descricao || ('Categoria ' + c.id) }}</option>
-          </select>
-        </div>
-
+        
         <div class="form-actions" style="gap:12px;">
           <button class="submit-button" type="button" (click)="salvar()">Salvar</button>
           <button class="manage-button" type="button" (click)="excluir()">Excluir</button>
