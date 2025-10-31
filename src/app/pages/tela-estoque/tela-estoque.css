@@ -87,3 +87,16 @@ tbody tr:hover {
     width: 100%;
   }
 }
+
+/* Additional responsive tweaks */
+@media (max-width: 900px) {
+  .estoque-container { padding: 20px; margin: 20px; }
+  table { font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  .estoque-container { padding: 12px; margin: 12px; }
+  .estoque-container table { display: block; width: 100%; overflow-x: auto; }
+  thead { display: table-header-group; }
+  tbody tr { display: table-row; }
+}

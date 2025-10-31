@@ -113,3 +113,10 @@
     height: 260px !important;
   }
 }
+
+@media (max-width: 600px) {
+    .cards { gap: 12px; }
+    .card { padding: 14px; border-radius: 8px; }
+    .chart { min-height: 220px; padding: 12px; }
+    .chart canvas { height: 200px !important; }
+}

@@ -106,3 +106,16 @@ body > p {
 }
 
 /* (autofill rules above keep inputs yellow; no conflicting rules here) */
+
+/* Responsive */
+@media (max-width: 600px) {
+    .login-container { width: calc(100% - 32px); padding: 20px; }
+    .login-container input { font-size: 14px; padding: 10px; }
+    .login-container button { width: 100%; padding: 10px; }
+    .image-container img { width: 96px; }
+}
+
+@media (max-width: 360px) {
+    .login-container { padding: 16px; }
+    .login-container img { width: 84px; }
+}

@@ -115,3 +115,16 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #FBBF24 inset !important;
   -webkit-text-fill-color: #1E3A8A !important;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .user-form-container { padding: 20px; max-width: 440px; }
+}
+
+@media (max-width: 480px) {
+  .user-page { margin: 12px; }
+  .user-form-container { width: calc(100% - 24px); padding: 16px; }
+  .form-group input { width: 100%; text-align: left; }
+  .form-buttons { flex-direction: column; }
+  .add-user-button, .exit-button { width: 100%; }
+}

@@ -79,3 +79,16 @@ thead {
 	margin-top: 12px;
 	color: #666;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+	.relatorio-container { padding: 16px; margin: 12px; }
+	.controls { flex-direction: column; align-items: stretch; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+	table, thead, tbody, th, td, tr { display: block; }
+	th { display: none; }
+	td { padding-left: 50%; position: relative; }
+	td::before { position: absolute; left: 12px; top: 12px; width: 40%; white-space: nowrap; font-weight:600; }
+}

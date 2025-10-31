@@ -75,3 +75,33 @@ body {
     margin-left: 0;
     width: 100vw;
 }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 200px;
+        width: calc(100vw - 200px);
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0; /* hidden by default on narrow screens; can be toggled with JS */
+        height: 100vh;
+        overflow: hidden;
+        padding: 0;
+    }
+    .sidebar .logo img { display:none; }
+    .content,
+    .content.no-sidebar {
+        margin-left: 0;
+        width: 100vw;
+    }
+    .container { flex-direction: column; }
+}

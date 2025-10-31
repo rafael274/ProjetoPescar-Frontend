@@ -189,3 +189,22 @@ input:-webkit-autofill::first-line {
     font-size: 14px;
     color: #1E3A8A;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .form-container { margin-top: 30px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select { width: 80%; }
+    .manage-button { top: 12px; right: 12px; padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+    .sidebar { width: 0; padding: 0; }
+    .main-content { padding: 12px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select { width: 100%; }
+    .form-container { margin-top: 18px; }
+    .manage-button { position: static; margin: 8px 0; }
+}

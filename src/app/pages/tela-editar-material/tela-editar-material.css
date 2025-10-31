@@ -21,3 +21,15 @@
 .submit-button:hover { background:#1D4ED8; }
 .manage-button:hover { background:#e11d48; color:#fff; }
 #mensagem { margin-top:12px; color:#333; font-size:14px; text-align:center; max-width:500px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .form-group { max-width: 420px; padding: 0 12px; }
+  .submit-button, .manage-button { padding: 10px 16px; }
+}
+
+@media (max-width: 480px) {
+  .form-group { width: 100%; max-width: 100%; padding: 0; }
+  .form-container { margin-top: 12px; }
+  .submit-button, .manage-button { width: 100%; margin: 6px 0; }
+}

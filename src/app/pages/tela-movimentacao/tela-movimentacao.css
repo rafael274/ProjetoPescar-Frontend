@@ -163,3 +163,17 @@ button:hover {
     justify-content: center; /* Centraliza o botão horizontalmente */
     align-items: center;    /* Centraliza o botão verticalmente (se necessário) */
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .form-group input, .form-group select { width: 70%; }
+}
+
+@media (max-width: 480px) {
+    .sidebar { width: 0; padding: 0; }
+    .main-content { padding: 12px; }
+    .form-container { margin-top: 12px; }
+    .form-group input, .form-group select { width: 100%; }
+    .form-actions { flex-direction: column; gap: 8px; }
+    button { width: 100%; }
+}
