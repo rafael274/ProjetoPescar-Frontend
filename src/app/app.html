@@ -1,5 +1,13 @@
 <div class="container">
-    <aside class="sidebar" *ngIf="showSidebar()">
+    <!-- Overlay for mobile -->
+    <div class="sidebar-overlay" [class.visible]="isMobileView && isSidebarOpen" (click)="closeSidebar()"></div>
+
+    <!-- Toggle button for mobile -->
+    <button class="sidebar-toggle" (click)="toggleSidebar()" *ngIf="isMobileView">
+        <span class="toggle-icon"></span>
+    </button>
+
+    <aside class="sidebar" *ngIf="showSidebar()" [class.open]="isSidebarOpen">
         <div class="logo">
             <img src="assets/logo.png" alt="Logo Projeto Pescar">
         </div>

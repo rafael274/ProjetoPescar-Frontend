@@ -76,32 +76,121 @@ body {
     width: 100vw;
 }
 
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.toggle-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #214287;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.toggle-icon::before,
+.toggle-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #214287;
+    transition: transform 0.3s;
+}
+
+.toggle-icon::before {
+    top: -6px;
+}
+
+.toggle-icon::after {
+    bottom: -6px;
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-overlay.visible {
+    opacity: 1;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .sidebar {
         width: 200px;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
     }
     .content {
         margin-left: 200px;
         width: calc(100vw - 200px);
+        transition: margin-left 0.3s ease-in-out;
     }
 }
 
 @media (max-width: 600px) {
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar-overlay {
+        display: block;
+        pointer-events: none;
+    }
+
+    .sidebar-overlay.visible {
+        pointer-events: auto;
+    }
+
     .sidebar {
         position: fixed;
         left: 0;
         top: 0;
-        width: 0; /* hidden by default on narrow screens; can be toggled with JS */
+        width: 250px;
         height: 100vh;
-        overflow: hidden;
-        padding: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
     }
-    .sidebar .logo img { display:none; }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar .logo img {
+        display: block;
+        width: 120px;
+    }
+
     .content,
     .content.no-sidebar {
         margin-left: 0;
         width: 100vw;
+        padding-top: 60px;
     }
-    .container { flex-direction: column; }
+
+    .container {
+        flex-direction: column;
+    }
 }
