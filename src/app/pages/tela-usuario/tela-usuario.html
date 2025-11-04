@@ -3,6 +3,9 @@
     <h1>Cadastro Usuário</h1>
   </header>
 
+  <!-- botão de gerenciar (edição/exclusão) no canto superior direito -->
+  <button class="manage-button" type="button" (click)="irParaEdicao()">Gerenciar</button>
+
   <section class="user-form-container">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">

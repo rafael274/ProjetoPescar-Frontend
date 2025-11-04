@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario-service'; // adiciona service
 import { Usuario } from '../../models/usuario.model'; // adiciona modelo
 
@@ -17,7 +18,10 @@ export class TelaUsuario {
   confirmarSenha: string = ''; // novo campo
   message: string = '';
 
-  constructor(private usuarioService: UsuarioService) {} // injeta service
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router
+  ) {} // injeta service
 
   onSubmit() {
     // cria payload conforme swagger
@@ -55,5 +59,9 @@ export class TelaUsuario {
     this.senha = '';
     this.confirmarSenha = '';
     this.message = '';
+  }
+
+  irParaEdicao() {
+    this.router.navigate(['/editar-usuario']);
   }
 }

@@ -1,0 +1,232 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.edit-user-page {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #1E3A8A;
+}
+
+header p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Botão Voltar */
+.back-button {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid #2563EB;
+    color: #2563EB;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.back-button:hover {
+    background: #2563EB;
+    color: #fff;
+}
+
+/* Lista de Usuários */
+.users-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3F4F6;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.user-info h3 {
+    color: #1E3A8A;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.user-info p {
+    color: #555;
+    font-size: 14px;
+}
+
+.user-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.edit-button {
+    background-color: #2563EB;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #1D4ED8;
+}
+
+.delete-button {
+    background-color: transparent;
+    color: #e11d48;
+    border: 1px solid #e11d48;
+}
+
+.delete-button:hover {
+    background-color: #e11d48;
+    color: white;
+}
+
+/* Formulário de Edição */
+.edit-form-container {
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    padding: 28px;
+    width: 100%;
+    max-width: 520px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FBBF24;
+    font-size: 14px;
+    text-align: center;
+    color: #1E3A8A;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #1E3A8A;
+}
+
+/* Botões do Formulário */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.save-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 120px;
+}
+
+.save-button {
+    background-color: #2563EB;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #1D4ED8;
+}
+
+.save-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancel-button {
+    background-color: #e11d48;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #be123c;
+}
+
+/* Mensagem de feedback */
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #064E3B;
+    padding: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .edit-form-container { padding: 20px; }
+    .form-group input { width: 80%; }
+    .back-button { top: 12px; right: 12px; padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+    .edit-user-page { padding: 12px; }
+    .form-group input { width: 100%; }
+    .user-card {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .form-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .save-button,
+    .cancel-button {
+        width: 100%;
+    }
+    .back-button {
+        position: static;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

@@ -1,130 +1,210 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Menu Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #1E3A8A;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar .menu ul li {
+    margin: 10px 0;
+}
+
+.sidebar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .menu ul li a:hover {
+    background-color: #2563EB;
+}
+
+/* Conteúdo Principal */
 .user-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
 }
 
 .user-page header {
-  text-align: center;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
 .user-page header h1 {
-  font-size: 1.6rem;
-  color: #214287;
+    font-size: 24px;
+    color: #1E3A8A;
 }
 
-/* Form container */
+/* Botão de gerenciar */
+.manage-button {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid #e11d48;
+    color: #e11d48;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.manage-button:hover {
+    background: #e11d48;
+    color: #fff;
+}
+
+/* Formulário */
 .user-form-container {
-  background-color: #F3F4F6;
-  border-radius: 12px;
-  padding: 28px;
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .form-group input {
-  width: 100%;
-  max-width: 420px;
-  padding: 10px 12px;
-  border: 1px solid rgba(7,20,51,0.06);
-  border-radius: 20px; /* input estilo das outras telas */
-  background-color: #FBBF24; /* fundo amarelo coerente */
-  color: #1E3A8A;
-  font-size: 14px;
-  outline: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03) inset;
-  text-align: center;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FBBF24;
+    font-size: 14px;
+    text-align: center;
+    color: #1E3A8A;
+    outline: none;
 }
 
 .form-group input::placeholder {
-  color: #1E3A8A;
+    color: #1E3A8A;
 }
 
 /* Buttons */
 .form-buttons {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 .add-user-button,
 .exit-button {
-  flex: 1;
-  padding: 10px 20px; /* padrao usado nas outras telas */
-  border: none;
-  border-radius: 5px; /* padronizado com cadastrar */
-  font-size: 14px;
-  cursor: pointer;
-  display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 150px;
 }
 
 .add-user-button {
-  background-color: #214287;
-  color: #fff;
+    background-color: #2563EB;
+    color: #fff;
+}
+
+.add-user-button:hover {
+    background-color: #1D4ED8;
 }
 
 .add-user-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .exit-button {
-  background-color: #ce2626;
-  color: #fff;
+    background-color: #e11d48;
+    color: #fff;
 }
 
-/* Mantém estilo similar aos outros formulários para mensagens */
+.exit-button:hover {
+    background-color: #be123c;
+}
+
+/* Mensagem de feedback */
 .message {
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #064E3B; /* verde suave para sucesso */
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #064E3B;
 }
 
-.message {
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #064E3B; /* verde suave para sucesso */
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .user-form-container {
-    padding: 20px;
-    width: calc(100% - 24px);
-  }
-  .form-buttons {
-    flex-direction: column;
-  }
-}
-
-/* Autofill: garante que o fundo amarelo persista quando o navegador preencher o campo */
+/* Remove o estilo padrão do preenchimento automático do navegador */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #FBBF24 inset !important;
-  box-shadow: 0 0 0px 1000px #FBBF24 inset !important;
-  -webkit-text-fill-color: #1E3A8A !important;
+    -webkit-box-shadow: 0 0 0px 1000px #FBBF24 inset;
+    box-shadow: 0 0 0px 1000px #FBBF24 inset;
+    -webkit-text-fill-color: #1E3A8A !important;
+}
+
+input:-webkit-autofill::first-line {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #1E3A8A;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .user-form-container { padding: 20px; max-width: 440px; }
+    .user-form-container { margin-top: 30px; }
+    .form-group input { width: 80%; }
+    .manage-button { top: 12px; right: 12px; padding: 6px 10px; }
 }
 
 @media (max-width: 480px) {
-  .user-page { margin: 12px; }
-  .user-form-container { width: calc(100% - 24px); padding: 16px; }
-  .form-group input { width: 100%; text-align: left; }
-  .form-buttons { flex-direction: column; }
-  .add-user-button, .exit-button { width: 100%; }
+    .sidebar { width: 0; padding: 0; }
+    .user-page { padding: 12px; }
+    .form-group input { width: 100%; }
+    .user-form-container { margin-top: 18px; }
+    .manage-button { position: static; margin: 8px 0; }
+    .form-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .add-user-button,
+    .exit-button {
+        width: 100%;
+    }
 }

@@ -8,6 +8,7 @@ import { TelaMovimentacao } from './pages/tela-movimentacao/tela-movimentacao';
 import { TelaEditarMaterial } from './pages/tela-editar-material/tela-editar-material';
 import { TelaUsuario } from './pages/tela-usuario/tela-usuario';
 import { TelaRelatorio } from './pages/tela-relatorio/tela-relatorio';
+import { TelaEditarUsuario } from './pages/tela-editar-usuario/tela-editar-usuario';
 
 export const routes: Routes = [
   { path: '', component: TelaLogin, pathMatch: 'full' }, // Página inicial é o login
@@ -19,4 +20,5 @@ export const routes: Routes = [
   { path: 'editar-material' , component: TelaEditarMaterial, canActivate: [AuthGuard] }, // Reutiliza TelaEstoque para edição
   { path: 'usuario', component: TelaUsuario, canActivate: [AuthGuard] }, // Página de usuário
   { path: 'relatorio', component: TelaRelatorio, canActivate: [AuthGuard] }, // Página de relatórios
+  { path: 'editar-usuario', component: TelaEditarUsuario, canActivate: [AuthGuard] } // Página de edição de usuário
 ];
